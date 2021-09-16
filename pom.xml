@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- TODO: Use kotlin-parent -->
+    <parent>
+        <artifactId>fnf-kotlin-parent</artifactId>
+        <groupId>no.fno.helsenett</groupId>
+        <version>26.20210824.125646</version>
+    </parent>
+
+    <groupId>no.liflig</groupId>
+    <artifactId>nor-types</artifactId>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+    <url>https://github.com/finansnorgeforsikringsdrift/fnf-helsenett-types</url>
+
+    <scm>
+        <developerConnection>scm:git:https://github.com/capralifecycle/nor-types.git
+        </developerConnection>
+        <connection>scm:git:https://github.com/capralifecycle/nor-types.git</connection>
+        <url>https://github.com/capralifecycle/nor-types</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <major-version>1</major-version>
+        <revision>${major-version}.local-SNAPSHOT</revision>
+
+<!--        <kotlin-logging.version>1.12.5</kotlin-logging.version>-->
+<!--        <commons-codec.version>1.15</commons-codec.version>-->
+<!--        <serialization.version>1.2.2</serialization.version>-->
+
+        <spek.version>2.0.17</spek.version>
+    </properties>
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>commons-codec</groupId>-->
+<!--            <artifactId>commons-codec</artifactId>-->
+<!--            <version>${commons-codec.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.github.microutils</groupId>-->
+<!--            <artifactId>kotlin-logging</artifactId>-->
+<!--            <version>${kotlin-logging.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.jetbrains.kotlinx</groupId>-->
+<!--            <artifactId>kotlinx-serialization-json</artifactId>-->
+<!--            <version>${serialization.version}</version>-->
+<!--            <type>pom</type>-->
+<!--        </dependency>-->
+
+        <!--Testing-->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test-junit</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spekframework.spek2</groupId>
+            <artifactId>spek-dsl-jvm</artifactId>
+            <version>${spek.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spekframework.spek2</groupId>
+            <artifactId>spek-runner-junit5</artifactId>
+            <version>${spek.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <!--org.jetbrains.spek:spek-api-->
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+
+        <!--For internal dependencies-->
+        <repository>
+            <id>fnf-releases</id>
+            <name>FNF Release Repository</name>
+            <url>https://mvnrepo.capraconsulting.no/content/repositories/fnf-releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>fnf-snapshots</id>
+            <name>FNF Snapshot Repository</name>
+            <url>https://mvnrepo.capraconsulting.no/content/repositories/fnf-snapshots</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-plugin</artifactId>
+                    <version>${kotlin.version}</version>
+                    <configuration>
+                        <compilerPlugins>
+                            <plugin>kotlinx-serialization</plugin>
+                        </compilerPlugins>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.jetbrains.kotlin</groupId>
+                            <artifactId>kotlin-maven-serialization</artifactId>
+                            <version>${kotlin.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.2.7</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,17 @@
+package no.fnf.helsenett.types.validation
+
+import no.fnf.helsenett.types.asDigit
+
+object Mod11 {
+    fun calcCheckDigit(value: String, vararg factors: Int): Int {
+        val checksum = checkSum(value, *factors)
+        val rest = checksum % 11
+        return if (rest == 0) 0 else 11 - rest
+    }
+
+    private fun checkSum(value: String, vararg factors: Int): Int =
+        value
+            .map { it.asDigit() }
+            .zip(factors.toList()) { char, factor -> char * factor }
+            .sum()
+}
