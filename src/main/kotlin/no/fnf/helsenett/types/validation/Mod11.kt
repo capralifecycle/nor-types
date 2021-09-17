@@ -4,6 +4,7 @@ import no.fnf.helsenett.types.asDigit
 
 object Mod11 {
     fun calcCheckDigit(value: String, vararg factors: Int): Int {
+        require(value.all { it.isDigit() })
         val checksum = checkSum(value, *factors)
         val rest = checksum % 11
         return if (rest == 0) 0 else 11 - rest
