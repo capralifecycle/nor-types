@@ -10,14 +10,14 @@ value class OrganisationNumber(val value: String) {
 
     init {
         require(value.length == 9) {
-            "Value ($value) does not have 9 digits and is consequently not a valid organisation number"
+            "Value [$value] does not have 9 digits and is consequently not a valid organisation number"
         }
         require(value.all { it.isDigit() }) {
-            "Value ($value) does not consist of only digits and is consequently not a valid organisation number"
+            "Value [$value] does not consist of only digits and is consequently not a valid organisation number"
         }
 
         require(value.hasValidOrgNumberCheckDigit()) {
-            "Value ($value) does not have valid Modulus11 check digits and is consequently not a valid birth number"
+            "Value [$value] does not have valid Modulus11 check digit and is consequently not a valid org number"
         }
     }
 

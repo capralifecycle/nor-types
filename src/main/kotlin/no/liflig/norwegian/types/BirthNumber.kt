@@ -10,13 +10,13 @@ value class BirthNumber(val value: String) {
 
     init {
         require(value.length == 11) {
-            "Value ($value) does not have 11 digits and is consequently not a valid birth number"
+            "Value [$value] does not have 11 digits and is consequently not a valid birth number"
         }
         require(value.all { it.isDigit() }) {
-            "Value ($value) does not consist of only digits and is consequently not a valid birth number"
+            "Value [$value] does not consist of only digits and is consequently not a valid birth number"
         }
         require(value.hasValidBirthNumberCheckDigits()) {
-            "Value ($value) does not have valid Modulus11 check digits and is consequently not a valid birth number"
+            "Value [$value] does not have valid Modulus11 check digits and is consequently not a valid birth number"
         }
         // TODO
         // validate individnummer
