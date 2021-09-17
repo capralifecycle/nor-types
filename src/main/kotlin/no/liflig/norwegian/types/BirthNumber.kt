@@ -1,8 +1,10 @@
 package no.liflig.norwegian.types
 
+import kotlinx.serialization.Serializable
 import no.liflig.norwegian.types.validation.Mod11
 
 @JvmInline
+@Serializable
 value class BirthNumber private constructor(val value: String) {
     companion object {
 

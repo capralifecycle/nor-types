@@ -29,30 +29,18 @@
         <major-version>1</major-version>
         <revision>${major-version}.local-SNAPSHOT</revision>
 
-<!--        <kotlin-logging.version>1.12.5</kotlin-logging.version>-->
-<!--        <commons-codec.version>1.15</commons-codec.version>-->
-<!--        <serialization.version>1.2.2</serialization.version>-->
+        <serialization.version>1.2.2</serialization.version>
 
         <spek.version>2.0.17</spek.version>
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>commons-codec</groupId>-->
-<!--            <artifactId>commons-codec</artifactId>-->
-<!--            <version>${commons-codec.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.github.microutils</groupId>-->
-<!--            <artifactId>kotlin-logging</artifactId>-->
-<!--            <version>${kotlin-logging.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.jetbrains.kotlinx</groupId>-->
-<!--            <artifactId>kotlinx-serialization-json</artifactId>-->
-<!--            <version>${serialization.version}</version>-->
-<!--            <type>pom</type>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-serialization-json</artifactId>
+            <version>${serialization.version}</version>
+            <type>pom</type>
+        </dependency>
 
         <!--Testing-->
         <dependency>

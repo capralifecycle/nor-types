@@ -1,6 +1,9 @@
 package no.liflig.norwegian.types
 
+import kotlinx.serialization.Serializable
+
 @JvmInline
+@Serializable
 value class NorwegianPhoneNumber private constructor(val value: String) {
 
     override fun toString(): String = value
