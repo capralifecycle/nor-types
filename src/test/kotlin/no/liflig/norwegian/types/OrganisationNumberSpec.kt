@@ -13,24 +13,24 @@ class OrganisationNumberSpec : Spek({
     describe("Creation of organisation number") {
 
         it("returns validated tiny type") {
-            OrganisationNumber("999523625") //  Finans Norge Forsikringsdrift
+            OrganisationNumber("925906093") // Liflig By Capra AS
         }
 
         it("throws IllegalArgumentException if input does not have length 9") {
             assertFailsWith<IllegalArgumentException> {
-                OrganisationNumber("99952362")
+                OrganisationNumber("92590609")
             }
         }
 
         it("throws IllegalArgumentException if input is not all digits") {
             assertFailsWith<IllegalArgumentException> {
-                OrganisationNumber("99952362X")
+                OrganisationNumber("92590609X")
             }
         }
 
         it("throws IllegalArgumentException if input does not have valid check digit") {
             assertFailsWith<IllegalArgumentException> {
-                OrganisationNumber("999523626")
+                OrganisationNumber("925906094")
             }
         }
 
@@ -50,7 +50,7 @@ class OrganisationNumberSpec : Spek({
             context("checks if the last digit matches the calculated check digit and") {
 
                 it("returns true if they match") {
-                    assertTrue("999523625".hasValidOrgNumberCheckDigit()) // Finans Norge Forsikringsdrift
+                    assertTrue("925906093".hasValidOrgNumberCheckDigit()) // Liflig By Capra AS
                     assertTrue("988097039".hasValidOrgNumberCheckDigit()) // Capra Consulting AS
                     assertTrue("085082981".hasValidOrgNumberCheckDigit()) // Random Number starting with '0'
                 }
