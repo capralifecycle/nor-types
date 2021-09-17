@@ -24,6 +24,8 @@ value class BirthNumber(val value: String) {
         // validate ikke syntetisk?
     }
 
+    override fun toString(): String = value
+
     companion object {
 
         internal val FACTORS_1 = intArrayOf(3, 7, 6, 1, 8, 9, 4, 5, 2)

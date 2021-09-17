@@ -21,6 +21,8 @@ value class OrganisationNumber(val value: String) {
         }
     }
 
+    override fun toString(): String = value
+
     companion object {
 
         internal val FACTORS = intArrayOf(3, 2, 7, 6, 5, 4, 3, 2)

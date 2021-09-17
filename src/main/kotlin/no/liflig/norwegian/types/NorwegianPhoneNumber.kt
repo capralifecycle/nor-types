@@ -10,6 +10,8 @@ value class NorwegianPhoneNumber private constructor(val value: String) {
         require(value.isValidPhoneNumber()) { "Value [$value] is not a valid Norwegian phone number" }
     }
 
+    override fun toString(): String = value
+
     companion object {
 
         /**
