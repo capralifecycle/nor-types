@@ -23,7 +23,7 @@ object NorwegianPhoneNumberSpec : Spek({
                     "004812345678"
                 )
                 invalidNumbers.forEach {
-                    assertFailsWith(IllegalArgumentException::class) {
+                    assertFailsWith<IllegalArgumentException> {
                         NorwegianPhoneNumber.of(it)
                     }
                 }
