@@ -24,6 +24,10 @@ value so no further validation is needed later in application flow.
 ### Reference
 https://kotlinlang.org/docs/inline-classes.html
 
+## Supported types
+* BirthNumber (fødselsnummer)
+* OrganisationNumber
+* NorwegianPhoneNumber
 
 ## Usage
 Instantiating types with invalid values throws IllegalArgumentException and must be handled accordingly using try/catch,
