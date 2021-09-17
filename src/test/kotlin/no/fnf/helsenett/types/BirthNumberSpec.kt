@@ -11,7 +11,7 @@ class BirthNumberSpec : Spek({
 
         describe("Modulus11 checksum validation") {
 
-            context("of birth number checks if the last two digits matches the calculated check digits and") {
+            context("checks if the last two digits matches the calculated check digits and") {
 
                 it("returns true if they match") {
                     assertTrue("02026600114".hasValidBirthNumberCheckDigits()) // Johnny Max Tøsdal

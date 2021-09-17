@@ -11,7 +11,7 @@ class OrgNumberSpec : Spek({
 
         describe("Modulus11 checksum validation") {
 
-            context("of organisation number checks if the last digit matches the calculated check digit and") {
+            context("checks if the last digit matches the calculated check digit and") {
 
                 it("returns true if they match") {
                     assertTrue("999523625".hasValidOrgNumberCheckDigit()) // Finans Norge Forsikringsdrift

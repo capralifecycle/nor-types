@@ -24,10 +24,10 @@ value class BirthNumber private constructor(val value: String) {
                             "and is consequently not a valid birth number"
                     }
 
-                    // TODO ?
-                    // validateIndividnummer
-                    // validateDate
-                    // validateSynthetic(fodselsnummer);
+                    // TODO
+                    // validate individnummer
+                    // validate dato
+                    // validate ikke syntetisk?
                 }
                 .let {
                     BirthNumber(it)
