@@ -29,18 +29,10 @@
         <major-version>1</major-version>
         <revision>${major-version}.local-SNAPSHOT</revision>
 
-        <serialization.version>1.2.2</serialization.version>
-
         <spek.version>2.0.17</spek.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.jetbrains.kotlinx</groupId>
-            <artifactId>kotlinx-serialization-json</artifactId>
-            <version>${serialization.version}</version>
-            <type>pom</type>
-        </dependency>
 
         <!--Testing-->
         <dependency>

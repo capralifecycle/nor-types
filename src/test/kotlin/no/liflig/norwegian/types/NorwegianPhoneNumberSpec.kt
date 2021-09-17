@@ -2,6 +2,8 @@ package no.liflig.norwegian.types
 
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
+import java.lang.reflect.InvocationTargetException
+import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertFailsWith
 
 object NorwegianPhoneNumberSpec : Spek({
@@ -26,6 +28,17 @@ object NorwegianPhoneNumberSpec : Spek({
                     assertFailsWith<IllegalArgumentException> {
                         NorwegianPhoneNumber.of(it)
                     }
+                }
+            }
+
+            it(
+                "throws InvocationTargetException (with IllegalArgumentException as cause) " +
+                    "if external library (e.g. Serialization frameworks) uses reflection to call constructor"
+            ) {
+                assertFailsWith<InvocationTargetException> {
+                    val constructor = NorwegianPhoneNumber::class.constructors.toList().get(0)
+                    constructor.isAccessible = true
+                    constructor.call("INVALID")
                 }
             }
 

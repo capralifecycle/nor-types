@@ -1,24 +1,25 @@
 package no.liflig.norwegian.types
 
-import kotlinx.serialization.Serializable
-
+/**
+ * Throws IllegalArgument exception if requirements fail for given value.
+ */
 @JvmInline
-@Serializable
 value class NorwegianPhoneNumber private constructor(val value: String) {
 
-    override fun toString(): String = value
+    init {
+        require(value.isValidPhoneNumber()) { "Value [$value] is not a valid Norwegian phone number" }
+    }
 
     companion object {
+
+        /**
+         * Accepts string with whitespaces and trims it.
+         */
         fun of(value: String): NorwegianPhoneNumber =
             value
                 .trim()
                 .replace(" ", "")
-                .also {
-                    require(it.isValidPhoneNumber()) { "Value [$value] is not a valid Norwegian phone number" }
-                }
-                .let {
-                    NorwegianPhoneNumber(it)
-                }
+                .let { NorwegianPhoneNumber(it) }
 
         private fun String.isValidPhoneNumber(): Boolean {
             val simpleMatch = Regex("^[0-9]{8}\$").containsMatchIn(this)

@@ -3,6 +3,8 @@ package no.liflig.norwegian.types
 import no.liflig.norwegian.types.OrganisationNumber.Companion.hasValidOrgNumberCheckDigit
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
+import java.lang.reflect.InvocationTargetException
+import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
@@ -11,24 +13,35 @@ class OrganisationNumberSpec : Spek({
     describe("Creation of organisation number") {
 
         it("returns validated tiny type") {
-            OrganisationNumber.of("999523625") //  Finans Norge Forsikringsdrift
+            OrganisationNumber("999523625") //  Finans Norge Forsikringsdrift
         }
 
         it("throws IllegalArgumentException if input does not have length 9") {
             assertFailsWith<IllegalArgumentException> {
-                OrganisationNumber.of("99952362")
+                OrganisationNumber("99952362")
             }
         }
 
         it("throws IllegalArgumentException if input is not all digits") {
             assertFailsWith<IllegalArgumentException> {
-                OrganisationNumber.of("99952362X")
+                OrganisationNumber("99952362X")
             }
         }
 
         it("throws IllegalArgumentException if input does not have valid check digit") {
             assertFailsWith<IllegalArgumentException> {
-                OrganisationNumber.of("999523626")
+                OrganisationNumber("999523626")
+            }
+        }
+
+        it(
+            "throws InvocationTargetException (with IllegalArgumentException as cause) " +
+                "if external library (e.g. Serialization frameworks) uses reflection to call constructor"
+        ) {
+            assertFailsWith<InvocationTargetException> {
+                val constructor = OrganisationNumber::class.constructors.toList().get(0)
+                constructor.isAccessible = true
+                constructor.call("INVALID")
             }
         }
 

@@ -3,6 +3,7 @@ package no.liflig.norwegian.types.validation
 import no.liflig.norwegian.types.asDigit
 
 object Mod11 {
+
     fun calcCheckDigit(value: String, vararg factors: Int): Int {
         require(value.all { it.isDigit() })
         val checksum = checkSum(value, *factors)
