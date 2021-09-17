@@ -1,4 +1,4 @@
-package no.fnf.helsenett.types
+package no.liflig.norwegian.types
 
 @JvmInline
 value class NorwegianPhoneNumber private constructor(val value: String) {

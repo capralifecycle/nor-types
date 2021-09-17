@@ -1,7 +1,7 @@
-package no.fnf.helsenett.types.validation
+package no.liflig.norwegian.types.validation
 
-import no.fnf.helsenett.types.BirthNumber
-import no.fnf.helsenett.types.OrganisationNumber
+import no.liflig.norwegian.types.BirthNumber
+import no.liflig.norwegian.types.OrganisationNumber
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 import kotlin.test.assertEquals

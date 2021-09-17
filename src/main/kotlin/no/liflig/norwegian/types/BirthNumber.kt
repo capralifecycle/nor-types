@@ -1,6 +1,6 @@
-package no.fnf.helsenett.types
+package no.liflig.norwegian.types
 
-import no.fnf.helsenett.types.validation.Mod11
+import no.liflig.norwegian.types.validation.Mod11
 
 @JvmInline
 value class BirthNumber private constructor(val value: String) {

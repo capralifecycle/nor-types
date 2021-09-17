@@ -1,6 +1,6 @@
-package no.fnf.helsenett.types
+package no.liflig.norwegian.types
 
-import no.fnf.helsenett.types.OrganisationNumber.Companion.hasValidOrgNumberCheckDigit
+import no.liflig.norwegian.types.OrganisationNumber.Companion.hasValidOrgNumberCheckDigit
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 import kotlin.test.assertTrue

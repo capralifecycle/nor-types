@@ -1,6 +1,6 @@
-package no.fnf.helsenett.types.validation
+package no.liflig.norwegian.types.validation
 
-import no.fnf.helsenett.types.asDigit
+import no.liflig.norwegian.types.asDigit
 
 object Mod11 {
     fun calcCheckDigit(value: String, vararg factors: Int): Int {

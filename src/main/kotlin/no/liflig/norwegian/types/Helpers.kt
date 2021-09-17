@@ -1,3 +1,3 @@
-package no.fnf.helsenett.types
+package no.liflig.norwegian.types
 
 internal fun Char.asDigit(): Int = Character.getNumericValue(this)
