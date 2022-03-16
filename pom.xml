@@ -6,7 +6,7 @@
     <parent>
         <artifactId>fnf-kotlin-parent</artifactId>
         <groupId>no.fno.helsenett</groupId>
-        <version>26.20211123.114559</version>
+        <version>26.20220310.122837</version>
     </parent>
 
     <groupId>no.liflig</groupId>
