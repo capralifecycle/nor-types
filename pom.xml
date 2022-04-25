@@ -2,11 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- TODO: Use kotlin-parent -->
     <parent>
-        <artifactId>fnf-kotlin-parent</artifactId>
-        <groupId>no.fno.helsenett</groupId>
-        <version>26.20220310.122837</version>
+        <groupId>no.liflig</groupId>
+        <artifactId>kotlin-parent</artifactId>
+        <version>1.20220425.113435</version>
     </parent>
 
     <groupId>no.liflig</groupId>
@@ -64,17 +63,12 @@
 
         <!--For internal dependencies-->
         <repository>
-            <id>fnf-releases</id>
-            <name>FNF Release Repository</name>
-            <url>https://mvnrepo.capraconsulting.no/content/repositories/fnf-releases</url>
+            <id>capra-releases</id>
+            <name>Capra/Liflig Release Repository</name>
+            <url>https://mvnrepo.capraconsulting.no/content/repositories/capra-releases</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </repository>
-        <repository>
-            <id>fnf-snapshots</id>
-            <name>FNF Snapshot Repository</name>
-            <url>https://mvnrepo.capraconsulting.no/content/repositories/fnf-snapshots</url>
         </repository>
     </repositories>
 
