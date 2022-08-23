@@ -28,7 +28,7 @@
         <major-version>1</major-version>
         <revision>${major-version}.local-SNAPSHOT</revision>
 
-        <spek.version>2.0.18</spek.version>
+        <spek.version>2.0.19</spek.version>
     </properties>
 
     <dependencies>
