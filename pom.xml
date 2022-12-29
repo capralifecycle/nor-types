@@ -31,6 +31,13 @@
         <spek.version>2.0.19</spek.version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/capralifecycle/nor-types</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
 
         <!--Testing-->
@@ -69,6 +76,11 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </repository>
+
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/capralifecycle/*</url>
         </repository>
     </repositories>
 
