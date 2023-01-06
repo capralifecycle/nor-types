@@ -5,7 +5,7 @@
     <parent>
         <groupId>no.liflig</groupId>
         <artifactId>kotlin-parent</artifactId>
-        <version>1.20220901.021600</version>
+        <version>1.20230106.095248</version>
     </parent>
 
     <groupId>no.liflig</groupId>
@@ -69,15 +69,6 @@
         </repository>
 
         <!--For internal dependencies-->
-        <repository>
-            <id>capra-releases</id>
-            <name>Capra/Liflig Release Repository</name>
-            <url>https://mvnrepo.capraconsulting.no/content/repositories/capra-releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-
         <repository>
             <id>github</id>
             <url>https://maven.pkg.github.com/capralifecycle/*</url>
