@@ -13,4 +13,4 @@ trim_trailing_whitespace = true
 # Disable Ktlint rules
 # import-ordering: Import layout in idea is currently not supported: https://youtrack.jetbrains.com/issue/KT-10974
 # no-unused-imports: Import aliases mistakenly reported as unused
-disabled_rules = import-ordering,no-unused-imports
+ktlint_disabled_rules = import-ordering,no-unused-imports
