@@ -1,13 +1,12 @@
 package no.liflig.norwegian.types
 
+import io.kotest.core.spec.style.DescribeSpec
 import java.lang.reflect.InvocationTargetException
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertFailsWith
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
 
 object NorwegianPhoneNumberSpec :
-    Spek({
+    DescribeSpec({
       describe("Creation of Norwegian phone number object") {
         context("of phone number") {
           it("throws exception for invalid numbers") {

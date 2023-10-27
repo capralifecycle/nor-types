@@ -48,15 +48,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.spekframework.spek2</groupId>
-            <artifactId>spek-dsl-jvm</artifactId>
-            <version>${spek.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spekframework.spek2</groupId>
-            <artifactId>spek-runner-junit5</artifactId>
-            <version>${spek.version}</version>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-runner-junit5-jvm</artifactId>
+            <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

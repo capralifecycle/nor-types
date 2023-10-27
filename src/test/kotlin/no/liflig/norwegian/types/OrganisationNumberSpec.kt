@@ -1,15 +1,14 @@
 package no.liflig.norwegian.types
 
+import io.kotest.core.spec.style.DescribeSpec
 import java.lang.reflect.InvocationTargetException
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 import no.liflig.norwegian.types.OrganisationNumber.Companion.hasValidOrgNumberCheckDigit
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
 
 class OrganisationNumberSpec :
-    Spek({
+    DescribeSpec({
       describe("Creation of organisation number") {
         it("returns validated tiny type") {
           OrganisationNumber("925906093") // Liflig By Capra AS

@@ -1,15 +1,14 @@
 package no.liflig.norwegian.types
 
+import io.kotest.core.spec.style.DescribeSpec
 import java.lang.reflect.InvocationTargetException
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 import no.liflig.norwegian.types.BirthNumber.Companion.hasValidBirthNumberCheckDigits
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
 
 class BirthNumberSpec :
-    Spek({
+    DescribeSpec({
       describe("Creation of birth number") {
         it("returns validated tiny type") {
           BirthNumber("02026600114") // Johnny Max Tøsdal

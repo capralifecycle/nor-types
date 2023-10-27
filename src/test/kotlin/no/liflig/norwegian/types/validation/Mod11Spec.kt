@@ -1,13 +1,12 @@
 package no.liflig.norwegian.types.validation
 
+import io.kotest.core.spec.style.DescribeSpec
 import kotlin.test.assertEquals
 import no.liflig.norwegian.types.BirthNumber
 import no.liflig.norwegian.types.OrganisationNumber
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
 
 object Mod11Spec :
-    Spek({
+    DescribeSpec({
       describe("Calculation of Modulus11 checksum digits") {
         it("returns the first check digit for birth number (second last digit)") {
           assertEquals(
