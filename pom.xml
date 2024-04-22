@@ -28,7 +28,7 @@
         <major-version>1</major-version>
         <revision>${major-version}.local-SNAPSHOT</revision>
 
-        <spek.version>2.0.19</spek.version>
+        <kotest-runner-junit5-jvm.version>5.8.1</kotest-runner-junit5-jvm.version>
     </properties>
 
     <distributionManagement>
@@ -50,19 +50,12 @@
         <dependency>
             <groupId>io.kotest</groupId>
             <artifactId>kotest-runner-junit5-jvm</artifactId>
-            <version>5.8.1</version>
+            <version>${kotest-runner-junit5-jvm.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <repositories>
-        <!--org.jetbrains.spek:spek-api-->
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-
-        <!--For internal dependencies-->
         <repository>
             <id>github</id>
             <url>https://maven.pkg.github.com/capralifecycle/*</url>
