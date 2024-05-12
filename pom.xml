@@ -28,7 +28,7 @@
         <major-version>1</major-version>
         <revision>${major-version}.local-SNAPSHOT</revision>
 
-        <kotest-runner-junit5-jvm.version>5.8.1</kotest-runner-junit5-jvm.version>
+        <kotest-runner-junit5-jvm.version>5.9.0</kotest-runner-junit5-jvm.version>
     </properties>
 
     <distributionManagement>
