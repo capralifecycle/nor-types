@@ -28,7 +28,7 @@ jobs:
                   java-version: "17.0.9"
                   java-package: "jdk"
 
-            - uses: capralifecycle/actions-lib/check-runtime-dependencies@1457d51592743644e6adc8557c89e77571a6d07c # v1.8.0
+            - uses: capralifecycle/actions-lib/check-runtime-dependencies@732d8e48e954621214a319b41b0e296ef252d2cc # v1.10.0
 
             - name: cache mvn
               uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
@@ -50,7 +50,7 @@ jobs:
                   }
                   echo "major-version=$major_version" >> "$GITHUB_OUTPUT"
 
-            - uses: capralifecycle/actions-lib/generate-tag@1457d51592743644e6adc8557c89e77571a6d07c # v1.8.0
+            - uses: capralifecycle/actions-lib/generate-tag@732d8e48e954621214a319b41b0e296ef252d2cc # v1.10.0
               id: tag
               with:
                   tag-prefix: "${{ steps.prep.outputs.major-version }}"
@@ -80,7 +80,7 @@ jobs:
                     mvn -B -U verify
                   fi
 
-            - uses: capralifecycle/actions-lib/slack-notify@1457d51592743644e6adc8557c89e77571a6d07c # v1.8.0
+            - uses: capralifecycle/actions-lib/slack-notify@732d8e48e954621214a319b41b0e296ef252d2cc # v1.10.0
               # NOTE: We only want to be notified about failures on the default branch
               if: ${{ failure() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
               with:
